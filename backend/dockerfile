@@ -1,6 +1,8 @@
 FROM node:lts-alpine
 WORKDIR /usr/app
 COPY package*.json ./
+RUN npm install bcrypt
+RUN npm install dotenv
 RUN npm install
 RUN npm update
 COPY . .
